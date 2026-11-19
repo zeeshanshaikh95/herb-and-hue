@@ -1,0 +1,40 @@
+# dependencies
+node_modules/
+.pnpm-store/
+
+# builds
+client/dist/
+server/dist/
+coverage/
+*.tsbuildinfo
+
+# environment & secrets
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+
+# local uploads fallback (never commit media)
+server/uploads/
+uploads/
+
+# logs
+*.log
+npm-debug.log*
+logs/
+
+# os / editor
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/*
+!.vscode/extensions.json
+
+# test artifacts
+server/.mongodb-binaries/
+.mongodb-binaries/
+test-results/
+playwright-report/
+.review/
+brand-check.html
