@@ -1,4 +1,0 @@
-
-> @herb-and-hue/client@1.0.0 typecheck
-> node ../scripts/run.mjs tsc --noEmit -p tsconfig.json
-
