@@ -1,0 +1,25 @@
+import { Router } from 'express';
+import { asyncHandler } from '../utils/asyncHandler.js';
+import { validateBody } from '../middleware/validate.js';
+import { analyticsLimiter, publicWriteLimiter } from '../middleware/rateLimit.js';
+import { getProduct, getRelatedProducts, listProducts, } from '../controllers/productController.js';
+import { getPublicCategory, listPublicCategories } from '../controllers/categoryController.js';
+import { listPublicReviews, submitReview } from '../controllers/reviewController.js';
+import { listPublicGallery } from '../controllers/galleryController.js';
+import { getPublicSettings } from '../controllers/settingsController.js';
+import { validateCart } from '../controllers/checkoutController.js';
+import { createAnalyticsEvent } from '../controllers/analyticsController.js';
+import { analyticsEventSchema, cartValidateSchema, reviewSubmissionSchema, } from '../validation/schemas.js';
+export const publicRouter = Router();
+publicRouter.get('/products', asyncHandler(listProducts));
+publicRouter.get('/products/:slug', asyncHandler(getProduct));
+publicRouter.get('/products/:slug/related', asyncHandler(getRelatedProducts));
+publicRouter.get('/categories', asyncHandler(listPublicCategories));
+publicRouter.get('/categories/:slug', asyncHandler(getPublicCategory));
+publicRouter.get('/reviews', asyncHandler(listPublicReviews));
+publicRouter.post('/reviews', publicWriteLimiter, validateBody(reviewSubmissionSchema), asyncHandler(submitReview));
+publicRouter.get('/gallery', asyncHandler(listPublicGallery));
+publicRouter.get('/settings/public', asyncHandler(getPublicSettings));
+publicRouter.post('/cart/validate', validateBody(cartValidateSchema), asyncHandler(validateCart));
+publicRouter.post('/analytics/events', analyticsLimiter, validateBody(analyticsEventSchema), asyncHandler(createAnalyticsEvent));
+//# sourceMappingURL=public.js.map

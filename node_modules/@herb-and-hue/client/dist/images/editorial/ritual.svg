@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 700" role="img">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#062F1D"/><stop offset="1" stop-color="#0B4529"/></linearGradient>
+    <linearGradient id="glass" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#8C6A24" stop-opacity="0.9"/><stop offset="0.5" stop-color="#E6CC93" stop-opacity="0.9"/><stop offset="1" stop-color="#7A5A18" stop-opacity="0.9"/></linearGradient>
+    <radialGradient id="glow" cx="0.5" cy="0.4" r="0.6"><stop offset="0" stop-color="#D9B66F" stop-opacity="0.35"/><stop offset="1" stop-color="#D9B66F" stop-opacity="0"/></radialGradient>
+    
+  <filter id="grain" x="0" y="0" width="100%" height="100%">
+    <feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="3" stitchTiles="stitch" result="n"/>
+    <feColorMatrix type="saturate" values="0" in="n" result="g"/>
+    <feComponentTransfer in="g" result="gg"><feFuncA type="linear" slope="0.045"/></feComponentTransfer>
+    <feBlend in="SourceGraphic" in2="gg" mode="multiply"/>
+  </filter>
+  </defs>
+  <g filter="url(#grain)">
+    <rect width="1200" height="700" fill="url(#bg)"/>
+    <ellipse cx="600" cy="330" rx="520" ry="300" fill="url(#glow)"/>
+    <g opacity="0.55" fill="none" stroke="#D9B66F" stroke-width="1">
+      <circle cx="600" cy="340" r="240"/><circle cx="600" cy="340" r="300" stroke-opacity="0.5"/>
+    </g>
+    <g transform="translate(330 240)">
+      <rect x="0" y="120" width="150" height="300" rx="18" fill="url(#glass)"/>
+      <rect x="32" y="20" width="86" height="120" rx="12" fill="url(#glass)"/>
+      <rect x="18" y="0" width="114" height="46" rx="10" fill="#D9B66F" opacity="0.85"/>
+      <rect x="22" y="170" width="106" height="180" rx="4" fill="#F8F4E9" opacity="0.95"/>
+      <text x="75" y="210" text-anchor="middle" font-family="Georgia, serif" font-size="14" fill="#073B24">Herb &amp; Hue</text>
+      <line x1="42" y1="222" x2="108" y2="222" stroke="#D9B66F"/>
+      <text x="75" y="248" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-size="8" letter-spacing="2.4" fill="#5A6157">CLEANSE</text>
+      <text x="75" y="278" text-anchor="middle" font-family="Georgia, serif" font-size="15" fill="#073B24">Botanical</text>
+      <text x="75" y="298" text-anchor="middle" font-family="Georgia, serif" font-size="15" fill="#073B24">Gel</text>
+    </g>
+    <g transform="translate(700 220)">
+      <rect x="0" y="80" width="190" height="340" rx="26" fill="url(#glass)"/>
+      <rect x="60" y="20" width="70" height="80" rx="8" fill="#D9B66F" opacity="0.8"/>
+      <rect x="20" y="150" width="150" height="190" rx="4" fill="#F8F4E9" opacity="0.95"/>
+      <text x="95" y="190" text-anchor="middle" font-family="Georgia, serif" font-size="15" fill="#073B24">Herb &amp; Hue</text>
+      <line x1="46" y1="202" x2="144" y2="202" stroke="#D9B66F"/>
+      <text x="95" y="228" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-size="8" letter-spacing="2.4" fill="#5A6157">MOISTURISE</text>
+      <text x="95" y="262" text-anchor="middle" font-family="Georgia, serif" font-size="18" fill="#073B24">Velvet</text>
+      <text x="95" y="284" text-anchor="middle" font-family="Georgia, serif" font-size="18" fill="#073B24">Cream</text>
+    </g>
+    <g fill="#9DBB9E" opacity="0.5">
+      <path d="M180 660 C 150 540 180 450 260 400 C 300 500 270 600 180 660 Z"/>
+      <path d="M1040 660 C 1070 540 1040 450 960 400 C 920 500 950 600 1040 660 Z"/>
+    </g>
+    <g fill="#DCE5D8" opacity="0.12">
+      <path d="M240 700 C 300 600 380 560 460 560 C 400 640 330 690 240 700 Z"/>
+    </g>
+  </g>
+</svg>

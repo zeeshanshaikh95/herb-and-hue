@@ -1,0 +1,1 @@
+import{a as o,d as i,j as a,e}from"./index-CWRijxz-.js";function m({children:s}){const{status:n,mustChangePassword:r}=o(),t=i();return n!=="signed-in"?a.jsx(e,{to:"/admin/login",state:{from:t.pathname},replace:!0}):r&&t.pathname!=="/admin/change-password"?a.jsx(e,{to:"/admin/change-password",replace:!0}):a.jsx(a.Fragment,{children:s})}export{m as RequireAdmin};
